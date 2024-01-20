@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/easy-ride/static/css/main.e25843e3.css",
+    "main.js": "/easy-ride/static/js/main.66c4557a.js",
+    "index.html": "/easy-ride/index.html",
+    "main.e25843e3.css.map": "/easy-ride/static/css/main.e25843e3.css.map",
+    "main.66c4557a.js.map": "/easy-ride/static/js/main.66c4557a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e25843e3.css",
+    "static/js/main.66c4557a.js"
+  ]
+}
