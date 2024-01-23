@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { selectFavorites } from '../redux/selector';
-import Adverts from 'components/Adverts/Adverts';
-import { StyledList } from 'components/Adverts/Adverts.styled';
+import Adverts from '../components/Adverts/Adverts';
+import { StyledList } from '../components/Adverts/Adverts.styled';
 import styled from 'styled-components';
 
 const Favorites = () => {

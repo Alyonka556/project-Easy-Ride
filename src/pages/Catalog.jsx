@@ -1,12 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getAdvertsThunk } from '../redux/operations';
-import {
-  selectAdverts,
-  // selectAdverts,
-  // selectFilter,
-  selectLoadMore,
-} from '../redux/selector';
+import { selectAdverts, selectLoadMore } from '../redux/selector';
 
 import Adverts from '../components/Adverts/Adverts';
 import { StyledList } from '../components/Adverts/Adverts.styled';

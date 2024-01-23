@@ -15,7 +15,6 @@ import Modal from '../Modal/Modal';
 import { useDispatch, useSelector } from 'react-redux';
 import { removeFavorites, setFavorites } from '../../redux/slice';
 import { selectFavorites } from '../../redux/selector';
-// import { getFavorites } from '../../redux/operations';
 
 const Adverts = ({ advert }) => {
   const {
@@ -31,32 +30,10 @@ const Adverts = ({ advert }) => {
     address,
   } = advert || {};
 
-  // const dispatch = useDispatch();
   const [isModalLearnMoreOpen, setIsModalLearnMoreOpen] = useState(false);
 
   const favorites = useSelector(selectFavorites);
   const [isFavorite, setIsFavorite] = useState(favorites.includes(id));
-
-  // useEffect(() => {
-  //   setIsFavorite(favorites.some(advert => advert.id === id));
-  // }, [favorites, id]);
-
-  // const onFavoriteBtnClick = () => {
-  //   setIsFavorite(!isFavorite);
-  //   if (!isFavorite) {
-  //     dispatch(setFavorites(advert));
-  //   } else {
-  //     dispatch(removeFavorites(id));
-  //   }
-  // };
-
-  // const favorites = useSelector(selectFavorites);
-
-  // const [isChecked, setIsChecked] = useState(favorites.includes(id));
-
-  // const [isChecked, setIsChecked] = useState(() => {
-  //   return favorites.some((favorite) => favorite.id === id);
-  // });
 
   const dispatch = useDispatch();
 

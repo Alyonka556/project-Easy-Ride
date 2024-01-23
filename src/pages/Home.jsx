@@ -3,7 +3,7 @@ import ImgSrc from '../assets/home_carrr.jpg';
 import {
   Container,
   NameTitle,
-  OrderBtn,
+  StyledBtn,
   Paragraph,
   Section,
   Title,
@@ -21,7 +21,7 @@ const Home = () => {
             <Title>all for you</Title>
             <NameTitle>Rent a car in style</NameTitle>
             <Paragraph>Our service aims to make your trips perfect</Paragraph>
-            <OrderBtn to="/catalog">Order now</OrderBtn>
+            <StyledBtn to="/catalog">Order now</StyledBtn>
           </TitleWrapper>
         </Wrapper>
       </Section>

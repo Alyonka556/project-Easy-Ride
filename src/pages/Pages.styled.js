@@ -67,12 +67,12 @@ export const Paragraph = styled.h3`
   }
 `;
 
-export const OrderBtn = styled(Link)`
+export const StyledBtn = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 35px;
-  margin-bottom: 35px;
+  margin-top: 25px;
+  margin-bottom: 25px;
   width: 180px;
   height: 48px;
   outline: none;
