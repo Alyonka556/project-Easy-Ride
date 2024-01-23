@@ -40,7 +40,7 @@ export const LogoWrapper = styled(NavLink)`
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 20px;
+  padding: 20px 0 20px 0;
 `;
 export const StyledLogoCar = styled(GiRaceCar)`
   font-size: 48px;
