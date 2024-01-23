@@ -1,13 +1,14 @@
 {
   "files": {
-    "main.css": "/easy-ride/static/css/main.e25843e3.css",
-    "main.js": "/easy-ride/static/js/main.66c4557a.js",
-    "index.html": "/easy-ride/index.html",
-    "main.e25843e3.css.map": "/easy-ride/static/css/main.e25843e3.css.map",
-    "main.66c4557a.js.map": "/easy-ride/static/js/main.66c4557a.js.map"
+    "main.css": "/project-easy-ride/static/css/main.7330afd0.css",
+    "main.js": "/project-easy-ride/static/js/main.98c9b83a.js",
+    "static/media/home_carrr.jpg": "/project-easy-ride/static/media/home_carrr.0e296b1500a08b82731b.jpg",
+    "index.html": "/project-easy-ride/index.html",
+    "main.7330afd0.css.map": "/project-easy-ride/static/css/main.7330afd0.css.map",
+    "main.98c9b83a.js.map": "/project-easy-ride/static/js/main.98c9b83a.js.map"
   },
   "entrypoints": [
-    "static/css/main.e25843e3.css",
-    "static/js/main.66c4557a.js"
+    "static/css/main.7330afd0.css",
+    "static/js/main.98c9b83a.js"
   ]
 }
