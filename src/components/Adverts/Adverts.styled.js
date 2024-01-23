@@ -1,32 +1,38 @@
-import styled from "styled-components";
-import { FaRegHeart } from "react-icons/fa6";
-
-export const StyledDiv = styled.div`
-  margin: 50px 0;
-`;
+import styled from 'styled-components';
+import { FaHeart, FaRegHeart } from 'react-icons/fa';
 
 export const StyledList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  row-gap: 50px;
-  column-gap: 29px;
+  justify-content: center;
+  gap: 29px;
+  margin-top: 50px;
+  margin-bottom: 100px;
+
+  @media only screen and (min-width: 768px) {
+    gap: 50px;
+    margin-bottom: 100px;
+  }
 `;
 
 export const StyledItem = styled.li`
-  position: relative;
   display: flex;
-  width: 274px;
-  height: 426px;
   flex-direction: column;
-  align-items: flex-start;
-  flex-shrink: 0;
-  border-radius: 14px;
+  width: 274px;
+  height: 425px;
+  position: relative;
+  img {
+    border-radius: 14px;
+    margin-bottom: 8px;
+    position: relative;
+    z-index: -1;
+  }
 `;
 
 export const StyledImg = styled.img`
   object-fit: cover;
   border-radius: 12px;
-  width: 401px;
+  width: auto;
   min-height: 268px;
   background: linear-gradient(
       180deg,
@@ -37,13 +43,25 @@ export const StyledImg = styled.img`
   margin-bottom: 12px;
 `;
 
-export const StyledButtonHear = styled.button`
+export const SpyledSpan = styled.span`
+  color: #3470ff;
+`;
+
+export const StyledButtonHeart = styled.button`
   border: none;
   outline: none;
   background: none;
 `;
 
-export const StyledHeart = styled(FaRegHeart)`
+export const StyledIsFavorit = styled(FaHeart)`
+  position: absolute;
+  color: #3470ff;
+  top: 14px;
+  right: 14px;
+  font-size: 18px;
+`;
+
+export const StyledFavorit = styled(FaRegHeart)`
   position: absolute;
   top: 14px;
   right: 14px;
@@ -51,9 +69,6 @@ export const StyledHeart = styled(FaRegHeart)`
   font-size: 18px;
   &:hover {
     color: #3470ff;
-  }
-  &:active {
-    background: #3470ff;
   }
 `;
 
@@ -67,7 +82,6 @@ export const StyledSpan = styled.span`
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-
 `;
 
 export const StyledText = styled.p`

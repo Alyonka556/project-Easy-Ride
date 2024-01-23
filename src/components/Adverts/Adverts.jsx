@@ -1,68 +1,103 @@
-import React, { useEffect, useState } from "react";
-import { fetchAdverts } from "../../services/api";
+import React, { useEffect, useState } from 'react';
+
 import {
+  SpyledSpan,
   StyledButton,
-  StyledButtonHear,
-  StyledDiv,
-  StyledHeart,
+  StyledButtonHeart,
+  StyledFavorit,
   StyledImg,
+  StyledIsFavorit,
   StyledItem,
-  StyledList,
   StyledSpan,
   StyledText,
-} from "./Adverts.styled";
-import Modal from "../Modal/Modal";
+} from './Adverts.styled';
+import Modal from '../Modal/Modal';
+import { useDispatch, useSelector } from 'react-redux';
+import { removeFavorites, setFavorites } from '../../redux/slice';
+import { selectFavorites } from '../../redux/selector';
+// import { getFavorites } from '../../redux/operations';
 
-const Adverts = () => {
-  const [adverts, setAdverts] = useState([]);
-  const [selectedAdvert, setSelectedAdvert] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+const Adverts = ({ advert }) => {
+  const {
+    id,
+    make,
+    model,
+    year,
+    img,
+    rentalPrice,
+    rentalCompany,
+    type,
+    functionalities,
+    address,
+  } = advert || {};
+
+  // const dispatch = useDispatch();
+  const [isModalLearnMoreOpen, setIsModalLearnMoreOpen] = useState(false);
+
+  const favorites = useSelector(selectFavorites);
+  const [isFavorite, setIsFavorite] = useState(favorites.includes(id));
+
+  // useEffect(() => {
+  //   setIsFavorite(favorites.some(advert => advert.id === id));
+  // }, [favorites, id]);
+
+  // const onFavoriteBtnClick = () => {
+  //   setIsFavorite(!isFavorite);
+  //   if (!isFavorite) {
+  //     dispatch(setFavorites(advert));
+  //   } else {
+  //     dispatch(removeFavorites(id));
+  //   }
+  // };
+
+  // const favorites = useSelector(selectFavorites);
+
+  // const [isChecked, setIsChecked] = useState(favorites.includes(id));
+
+  // const [isChecked, setIsChecked] = useState(() => {
+  //   return favorites.some((favorite) => favorite.id === id);
+  // });
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    fetchAdverts().then((res) => setAdverts(res));
-  }, []);
+    setIsFavorite(favorites.some(favorite => favorite.id === id));
+  }, [favorites, id]);
 
-  const handleLearnMore = (advert) => {
-    setSelectedAdvert(advert);
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
-  };
+  function onFavoriteBtnClick() {
+    if (isFavorite) {
+      dispatch(removeFavorites(id));
+    } else {
+      dispatch(setFavorites(advert));
+    }
+  }
 
   return (
-    <StyledDiv>
-      <StyledList>
-        {adverts?.map((advert, index) => (
-          <StyledItem key={`${advert.id}-${index}`}>
-            <StyledButtonHear>
-              <StyledHeart />
-            </StyledButtonHear>
+    <>
+      <StyledItem>
+        <StyledButtonHeart onClick={onFavoriteBtnClick}>
+          {isFavorite ? <StyledIsFavorit /> : <StyledFavorit />}
+        </StyledButtonHeart>
+        <StyledImg src={img} width={320} alt={make} />
+        <StyledSpan>
+          <p>
+            {make} <SpyledSpan>{model}</SpyledSpan>, {year}
+          </p>
+          {rentalPrice}
+        </StyledSpan>
+        <StyledText>
+          {address?.split(', ')[1]} | {address?.split(', ')[2]} |{' '}
+          {rentalCompany} | {type} | {make} | {id} | {functionalities[0]}
+        </StyledText>
+        <StyledButton onClick={() => setIsModalLearnMoreOpen(true)}>
+          Learn more
+        </StyledButton>
+      </StyledItem>
 
-            <StyledImg src={advert.img} width={320} alt={advert.type} />
-
-            <StyledSpan>
-              <p>
-                {advert.make} <span>{advert.model}</span>, {advert.year}
-              </p>
-              {advert.rentalPrice}
-            </StyledSpan>
-            <StyledText>
-              {advert.address} | {advert.rentalCompany} | {advert.type} |
-              {advert.make} |{advert.mileage} | {advert.accessories}
-            </StyledText>
-            <StyledButton onClick={() => handleLearnMore(advert)}>
-              Loarn more
-            </StyledButton>
-          </StyledItem>
-        ))}
-      </StyledList>
-
-      {isModalOpen && (
-        <Modal onClose={handleCloseModal} advertDetails={selectedAdvert} />
+      {isModalLearnMoreOpen && (
+        <Modal onClose={() => setIsModalLearnMoreOpen(false)} advert={advert} />
       )}
-    </StyledDiv>
+    </>
   );
 };
 

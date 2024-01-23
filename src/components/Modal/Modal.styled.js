@@ -1,35 +1,41 @@
-import styled from "styled-components";
-import { IoCloseOutline } from "react-icons/io5";
+import styled from 'styled-components';
+import { IoCloseOutline } from 'react-icons/io5';
 
 export const Backdrop = styled.div`
   position: fixed;
+  display: flex;
   flex-direction: column;
+  align-items: center;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  display: flex;
-  align-items: center;
-  z-index: 8;
-
-  &::before {
-    background: rgba(18, 20, 23, 0.5);
-    content: "";
-    inset: 0;
-    z-index: -1;
-  }
-
-  @media only screen and (min-width: 768px) {
-    justify-content: center;
-  }
+  z-index: 10;
+  background: rgba(18, 20, 23, 0.5);
 `;
 
 export const StyledWrapper = styled.div`
-  position: relative;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 24px;
   width: 541px;
   height: 752px;
-  border-radius: 24px;
-  background: #fff;
+  max-height: 90%;
+`;
+
+export const StyledModalContainer = styled.div`
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  color: black;
+  z-index: 1;
 `;
 
 export const StyledClose = styled(IoCloseOutline)`
@@ -45,8 +51,8 @@ export const StyledClose = styled(IoCloseOutline)`
 export const StyledImg = styled.img`
   object-fit: cover;
   border-radius: 12px;
-  width: 401px;
-  min-height: 268px;
+  width: auto;
+  height: 314px;
   background: linear-gradient(
       180deg,
       rgba(18, 20, 23, 0.5) 2.5%,
@@ -56,30 +62,87 @@ export const StyledImg = styled.img`
   margin-bottom: 12px;
 `;
 
-export const StyledSpan = styled.span`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 8px;
+export const StyledTitle = styled.p`
   color: #121417;
-  width: 100%;
-  font-size: 16px;
+  font-family: Manrope;
+  font-size: 18px;
   font-style: normal;
   font-weight: 500;
+  line-height: 24px;
 `;
 
-export const StyledText = styled.p`
-  color: rgba(18, 20, 23, 0.5);
+export const StyledColorSpan = styled.span`
+  color: #3470ff;
+`;
+export const StyledDescription = styled.p`
+  color: #121417;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+`;
 
+export const TextInfo = styled.p`
+  color: #121417;
+  font-family: Manrope;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+`;
+
+export const StyledText = styled.span`
+  color: rgba(18, 20, 23, 0.5);
   font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
+  line-height: 18px;
+`;
+
+export const StyledBox = styled.div`
   display: flex;
-  width: 270px;
-  height: 40px;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 4px;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+`;
+
+export const StyledItemConditions = styled.span`
+  color: #363535;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 18px;
+  letter-spacing: -0.24px;
+  padding: 7px 14px;
+`;
+
+export const StyledColorSpanConditions = styled.span`
+  color: #3470ff;
+  font-weight: 600;
+`;
+
+export const StyledButton = styled.button`
+  display: flex;
+  padding: 12px 50px;
+  width: 168px;
+  height: 44px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+  background-color: #3470ff;
+  border: none;
+  color: var(--White, #fff);
+  font-size: 14px;
+  font-weight: 600;
+
+  line-height: 20px;
+  margin-top: 28px;
+
+  &:hover {
+    background-color: #0b44cd;
+  }
 `;

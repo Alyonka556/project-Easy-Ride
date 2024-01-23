@@ -1,9 +1,10 @@
 {
-  "name": "easy-ride",
+  "name": "project-easy-ride",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Alyonka556.github.io/easy-ride/",
+  "homepage": "https://Alyonka556.github.io/project-easy-ride/",
   "dependencies": {
+    "@reduxjs/toolkit": "^2.0.1",
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
@@ -11,9 +12,13 @@
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
     "react-icons": "^5.0.1",
+    "react-redux": "^9.1.0",
     "react-router-dom": "^6.21.3",
     "react-scripts": "5.0.1",
+    "react-select": "^5.8.0",
     "react-toastify": "^10.0.3",
+    "redux-persist": "^6.0.0",
+    "rsuite": "^5.51.0",
     "styled-components": "^6.1.8",
     "web-vitals": "^2.1.3"
   },
