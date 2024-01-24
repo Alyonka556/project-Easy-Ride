@@ -34,7 +34,7 @@ Ensure you have the following installed on your machine:
    ```bash
    git clone https://github.com/Alyonka556/project-easy-ride
    ```
-2. Navigate to the project directory: `cd prestige-drive`
+2. Navigate to the project directory: `cd project-easy-ride`
 
 3. Install dependencies: `npm install` or `yarn install`
 
