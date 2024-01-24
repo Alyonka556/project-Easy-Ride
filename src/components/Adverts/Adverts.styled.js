@@ -86,8 +86,6 @@ export const StyledSpan = styled.span`
 
 export const StyledText = styled.p`
   color: rgba(18, 20, 23, 0.5);
-
-  font-family: Manrope;
   font-size: 12px;
   font-style: normal;
   font-weight: 400;

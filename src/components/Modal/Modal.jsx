@@ -23,7 +23,6 @@ const Modal = ({ advert, onClose }) => {
     year,
     img,
     rentalPrice,
-    // rentalCompany,
     type,
     fuelConsumption,
     engineSize,

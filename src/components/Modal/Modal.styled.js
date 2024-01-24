@@ -3,28 +3,28 @@ import { IoCloseOutline } from 'react-icons/io5';
 
 export const Backdrop = styled.div`
   position: fixed;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   top: 0;
   left: 0;
+  z-index: 5;
+  display: flex;
   width: 100vw;
   height: 100vh;
-  z-index: 10;
-  background: rgba(18, 20, 23, 0.5);
+  background-color: rgba(18, 20, 23, 0.5);
+  backdrop-filter: blur(5px);
 `;
 
 export const StyledWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  padding: 40px;
-  background-color: #fff;
-  border-radius: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
   width: 541px;
-  height: 752px;
-  max-height: 90%;
+  min-height: 752px;
+  margin: auto;
+  padding: 40px 35px;
+  background-color: #fff;
+  box-shadow: 1px 1px 4px lightgray;
+  border-radius: 24px;
 `;
 
 export const StyledModalContainer = styled.div`
@@ -64,7 +64,7 @@ export const StyledImg = styled.img`
 
 export const StyledTitle = styled.p`
   color: #121417;
-  font-family: Manrope;
+
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -76,16 +76,17 @@ export const StyledColorSpan = styled.span`
 `;
 export const StyledDescription = styled.p`
   color: #121417;
-  font-family: Manrope;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: 20px;
+  margin-bottom: 24px;
 `;
 
 export const TextInfo = styled.p`
   color: #121417;
-  font-family: Manrope;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -94,11 +95,12 @@ export const TextInfo = styled.p`
 
 export const StyledText = styled.span`
   color: rgba(18, 20, 23, 0.5);
-  font-family: Manrope;
+
   font-size: 12px;
   font-style: normal;
   font-weight: 400;
   line-height: 18px;
+  margin-bottom: 24px;
 `;
 
 export const StyledBox = styled.div`
@@ -110,9 +112,7 @@ export const StyledBox = styled.div`
 
 export const StyledItemConditions = styled.span`
   color: #363535;
-  font-family: Montserrat;
   font-size: 12px;
-  font-style: normal;
   font-weight: 400;
   line-height: 18px;
   letter-spacing: -0.24px;
