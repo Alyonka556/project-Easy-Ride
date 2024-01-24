@@ -9,7 +9,7 @@ import { store } from './redux/store';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter basename="project-easy-ride">
+  <BrowserRouter basename="/project-easy-ride">
     <Provider store={store}>
       <App />
       <ToastContainer
