@@ -19,6 +19,7 @@ export const LoadMoreBtn = styled.button`
   font-weight: 500;
   line-height: 24px;
   text-decoration-line: underline;
+  margin-bottom: 50px;
 
   &:hover {
     background-color: #0b44cd;

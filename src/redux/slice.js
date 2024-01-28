@@ -8,6 +8,9 @@ const initialState = {
   isLoading: false,
   error: null,
   loadMore: true,
+  clickCardId: '',
+  select: '',
+  filters: {},
 };
 
 const onPending = state => {
@@ -33,6 +36,23 @@ const carsSlice = createSlice({
     removeFavorites: (state, { payload }) => {
       state.favorites = state.favorites.filter(({ id }) => id !== payload);
     },
+    changeClickCardId: (state, { payload }) => {
+      state.clickCardId = payload;
+    },
+    changeSelectFilter: (state, { payload }) => {
+      if (payload.length < 12) {
+        state.loadMore = false;
+        state.select = payload;
+      } else {
+        state.select = payload;
+      }
+    },
+    changeFilters: (state, { payload }) => {
+      state.filters = payload;
+    },
+    changeFirstLoad: (state, { payload }) => {
+      state.firstLoad = payload;
+    },
   },
   extraReducers: builder => {
     builder
@@ -52,5 +72,13 @@ const carsSlice = createSlice({
   },
 });
 
-export const { setLoadMore, setFavorites, removeFavorites } = carsSlice.actions;
+export const {
+  setLoadMore,
+  setFavorites,
+  removeFavorites,
+  changeClickCardId,
+  changeSelectFilter,
+  changeFilters,
+  changeFirstLoad,
+} = carsSlice.actions;
 export const carsReducer = carsSlice.reducer;

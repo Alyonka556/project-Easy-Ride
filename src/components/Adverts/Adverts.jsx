@@ -23,6 +23,7 @@ const Adverts = ({ advert }) => {
     model,
     year,
     img,
+    photoLink,
     rentalPrice,
     rentalCompany,
     type,
@@ -51,11 +52,11 @@ const Adverts = ({ advert }) => {
 
   return (
     <>
-      <StyledItem>
+      <StyledItem key={id}>
         <StyledButtonHeart onClick={onFavoriteBtnClick}>
           {isFavorite ? <StyledIsFavorit /> : <StyledFavorit />}
         </StyledButtonHeart>
-        <StyledImg src={img} width={320} alt={make} />
+        <StyledImg src={img || photoLink} width={320} alt={make} />
         <StyledSpan>
           <p>
             {make} <SpyledSpan>{model}</SpyledSpan>, {year}
